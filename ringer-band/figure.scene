@@ -1,0 +1,62 @@
+<scene exported_by="tkcook" formatVersion="1.0.1" previous_export_time="0" export_time="1339776316.061643" >
+	<nodes >
+		<node name="Lamp.004" >
+			<position y="11.372825" x="-2.818927" z="1.992593" />
+			<rotation qy="-0.610937" qx="0.387411" qz="0.516051" qw="0.458650" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+			<light type="point" name="Lamp.004" powerScale="1.0" >
+				<position y="11.372825" x="-2.818927" z="1.992593" />
+				<lightAttenuation range="5000" quadratic="0.0" constant="1.0" linear="0.05" />
+				<colourDiffuse r="1.0" b="1.0" g="1.0" />
+				<colourSpecular r="1.0" b="1.0" g="1.0" />
+			</light>
+		</node>
+		<node name="Lamp.006" >
+			<position y="14.224229" x="-8.217549" z="-15.017311" />
+			<rotation qy="0.814817" qx="-0.393195" qz="-0.319190" qw="0.282115" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+		</node>
+		<node name="Lamp.005" >
+			<position y="19.005978" x="4.363359" z="7.782907" />
+			<rotation qy="0.358654" qx="0.444183" qz="0.006651" qw="0.820990" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+			<light type="directional" name="Lamp.005" powerScale="1.0" >
+				<position y="19.005978" x="4.363359" z="7.782907" />
+				<lightAttenuation range="5000" quadratic="0.0" constant="1.0" linear="0.05" />
+				<direction y="-0.605" x="-0.33" z="0.725" />
+				<colourDiffuse r="1.0" b="1.0" g="1.0" />
+				<colourSpecular r="1.0" b="1.0" g="1.0" />
+			</light>
+		</node>
+		<node name="Camera" >
+			<position y="10.721453" x="-19.082504" z="-9.356729" />
+			<rotation qy="-0.646722" qx="0.348389" qz="0.526610" qw="0.427852" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+			<camera projectionType="perspective" fov="37.84928883210247" name="Camera" >
+				<clipping nearPlaneDist="0.10000000149011612" farPlaneDist="100.0" />
+			</camera>
+		</node>
+	</nodes>
+	<externals />
+	<environment >
+		<colourBackground r="0.05656290054321289" b="0.4000000059604645" g="0.22081542015075684" />
+		<colourAmbient r="0.0" b="0.0" g="0.0" />
+		<colourDiffuse r="0.05656290054321289" b="0.4000000059604645" g="0.22081542015075684" />
+	</environment>
+</scene>
