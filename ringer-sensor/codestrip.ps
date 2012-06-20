@@ -1,0 +1,84 @@
+%!PS-Adobe-2.0
+%%Pages: 1
+%%BoundingBox: 0 0 842 1191
+%%EndComments
+
+/l { newpath moveto lineto stroke } def
+/inch { 72.0 mul } def
+
+/dostrip {
+	/lpi exch def
+	/linecount exch def
+	/width exch def
+
+	1.0 lpi div inch 2.0 div setlinewidth
+
+	/spacing 1.0 lpi div inch def
+
+	0 1 linecount {
+		0 0 width 0 l
+		0 spacing translate
+	} for
+} def
+
+/codestrip {
+	/titletext exch def
+	0 0 moveto
+	/Helvetica findfont
+	8 scalefont
+	setfont
+	titletext show
+	0 20 translate
+
+	dostrip
+} def
+
+/quadcodestrip {
+	/titletext exch def
+	/lpi exch def
+	/linecount exch def
+	/width exch def
+
+	/quadwidth width 2 div def
+	0 0 moveto
+	/Helvetica findfont
+	8 scalefont
+	setfont
+	titletext show
+
+	0 20 translate
+	gsave
+	quadwidth linecount lpi dostrip
+	grestore
+	quadwidth 1 lpi div 4 div inch translate
+	quadwidth linecount lpi dostrip
+} def
+
+gsave
+20 10 translate
+72 1125 75 (75LPI CODESTRIP) codestrip
+grestore
+
+gsave
+120 10 translate
+72 2.5 15 mul 2.5 (2.5LPI CODESTRIP) codestrip
+grestore
+
+gsave
+220 10 translate
+72 525 35 (35LPI QUADRATURE) quadcodestrip
+grestore
+
+gsave
+320 10 translate
+72 75 15 mul 75 (75LPI QUADRATURE) quadcodestrip
+grestore
+
+gsave
+420 10 translate
+72 10 15 mul 10 (10LPI QUADRATURE) quadcodestrip
+showpage
+
+
+%%EOF
+
