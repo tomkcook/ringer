@@ -1,0 +1,32 @@
+
+// blender material: Bronze
+material Bronze 
+{
+    receive_shadows on
+    technique b2ogre_1342347385.554725
+    {
+        pass b2ogre_1342347385.554856
+        {
+            ambient 0.37574154138565063 0.2887111008167267 0.09532207250595093 1.0
+            diffuse 0.17981916111548912 0.13816888002891403 0.045618419114902053 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+        }
+    }
+}

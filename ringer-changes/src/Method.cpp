@@ -7,7 +7,7 @@
 
 #include "Method.h"
 
-Method::Method(int bell_count) {
+Method::Method(unsigned bell_count) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -16,12 +16,12 @@ Method::~Method() {
 	// TODO Auto-generated destructor stub
 }
 
-Change::Change(int bell_count) {
-	for(int i = 0; i < bell_count; i++)
+Change::Change(unsigned bell_count) {
+	for(unsigned i = 0; i < bell_count; i++)
 		push_back(i);
 }
 
-int Change::WhereIs(int bell) throw(std::out_of_range) {
+unsigned Change::WhereIs(unsigned bell) throw(std::out_of_range) {
 	int place = 0;
 	for(iterator i = begin(); i != end(); i++, place++) {
 		if(*i == bell)
@@ -30,7 +30,7 @@ int Change::WhereIs(int bell) throw(std::out_of_range) {
 	throw std::out_of_range("Out of range");
 }
 
-void Change::Swap(int place) throw (std::out_of_range) {
+void Change::Swap(unsigned place) throw (std::out_of_range) {
 	if(place >= size() || place == 0)
 		throw std::out_of_range("Out of range");
 
@@ -39,10 +39,22 @@ void Change::Swap(int place) throw (std::out_of_range) {
 	at(place-1) = tmp;
 }
 
-StoredMethod::StoredMethod(int bell_count)
-	: Method(bell_count), std::vector<Change>()
+StoredMethod::StoredMethod(unsigned bell_count)
+	: std::vector<Change>(),
+	  Method(bell_count),
+	  m_iCurrentIndex(0)
 {
-	push_back(Change(bell_count));
+	Change c = Change(bell_count);
+	push_back(c);
+	for(int i = 0; i < 15; i+=2)
+	{
+		c.Swap(1);
+		c.Swap(3);
+		push_back(c);
+		c.Swap(2);
+		c.Swap(4);
+		push_back(c);
+	}
 }
 
 StoredMethod::~StoredMethod() {
@@ -64,7 +76,7 @@ Change& StoredMethod::Current() {
 	return at(m_iCurrentIndex);
 }
 
-CalledMethod::CalledMethod(int bell_count) :
+CalledMethod::CalledMethod(unsigned bell_count) :
 	Method(bell_count), m_CurrentChange(bell_count)
 {
 }
@@ -84,7 +96,7 @@ Change& CalledMethod::Next() throw() {
 	return m_CurrentChange;
 }
 
-Change& CalledMethod::Swap(int place) {
+Change& CalledMethod::Swap(unsigned place) {
 	m_CurrentChange.Swap(place);
 	return m_CurrentChange;
 }

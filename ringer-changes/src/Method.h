@@ -13,19 +13,20 @@
 
 // Represents a single change / round of ringing
 // Note that both bells and places are 0-based in this class!
-class Change : public std::vector<int> {
+class Change : public std::vector<unsigned> {
 public:
-	Change(int bell_count);
+	Change(unsigned bell_count);
 	// Find out what place a bell is ringing in this change
-	int WhereIs(int bell) throw(std::out_of_range);
+	unsigned WhereIs(unsigned bell) throw(std::out_of_range);
 	// Swap the bells ringing place-1 and place.
 	// A called change of '2 to 3' means Swap(WhereIs(3))
-	void Swap(int place) throw(std::out_of_range);
+	void Swap(unsigned place) throw(std::out_of_range);
+	unsigned WhoIsIn(unsigned place) throw(std::out_of_range) { return at(place); }
 };
 
 class Method {
 public:
-	Method(int bell_count);
+	Method(unsigned bell_count);
 	virtual ~Method();
 
 	virtual void Reset() = 0;
@@ -35,7 +36,8 @@ public:
 };
 
 class StoredMethod : public std::vector<Change>, public Method {
-	StoredMethod(int bell_count);
+public:
+	StoredMethod(unsigned bell_count);
 	virtual ~StoredMethod();
 
 	void Reset();
@@ -44,17 +46,18 @@ class StoredMethod : public std::vector<Change>, public Method {
 	Change& Current();
 
 protected:
-	int m_iCurrentIndex;
+	unsigned m_iCurrentIndex;
 };
 
 class CalledMethod : public Method {
-	CalledMethod(int bell_count);
+public:
+	CalledMethod(unsigned bell_count);
 	virtual ~CalledMethod();
 
 	void Reset();
 	bool HasNext();
 	Change& Next() throw();
-	Change& Swap(int place);
+	Change& Swap(unsigned place);
 	Change& Current();
 
 protected:
