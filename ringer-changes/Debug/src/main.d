@@ -1,9 +1,9 @@
 src/main.d: ../src/main.cpp ../src/Display.h \
  /usr/include/gtkmm-3.0/gtkmm.h /usr/include/glibmm-2.4/glibmm.h \
- /usr/lib/x86_64-linux-gnu/glibmm-2.4/include/glibmmconfig.h \
+ /usr/lib/i386-linux-gnu/glibmm-2.4/include/glibmmconfig.h \
  /usr/include/glibmm-2.4/glibmm/thread.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
- /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
+ /usr/lib/i386-linux-gnu/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
  /usr/include/glib-2.0/glib/gversionmacros.h \
  /usr/include/glib-2.0/glib/garray.h \
@@ -73,7 +73,7 @@ src/main.d: ../src/main.cpp ../src/Display.h \
  /usr/include/sigc++-2.0/sigc++/sigc++.h \
  /usr/include/sigc++-2.0/sigc++/signal.h \
  /usr/include/sigc++-2.0/sigc++/signal_base.h \
- /usr/lib/x86_64-linux-gnu/sigc++-2.0/include/sigc++config.h \
+ /usr/lib/i386-linux-gnu/sigc++-2.0/include/sigc++config.h \
  /usr/include/sigc++-2.0/sigc++/type_traits.h \
  /usr/include/sigc++-2.0/sigc++/trackable.h \
  /usr/include/sigc++-2.0/sigc++/functors/slot.h \
@@ -407,7 +407,7 @@ src/main.d: ../src/main.cpp ../src/Display.h \
  /usr/include/gdkmm-3.0/gdkmm/dragcontext.h \
  /usr/include/gdkmm-3.0/gdkmm/color.h \
  /usr/lib/gdkmm-3.0/include/gdkmmconfig.h \
- /usr/lib/x86_64-linux-gnu/pangomm-1.4/include/pangommconfig.h \
+ /usr/lib/i386-linux-gnu/pangomm-1.4/include/pangommconfig.h \
  /usr/include/gtk-3.0/gdk/gdk.h /usr/include/gtk-3.0/gdk/gdkconfig.h \
  /usr/include/gtk-3.0/gdk/gdkversionmacros.h \
  /usr/include/gtk-3.0/gdk/gdkapplaunchcontext.h \
@@ -1124,7 +1124,7 @@ src/main.d: ../src/main.cpp ../src/Display.h \
 
 /usr/include/glibmm-2.4/glibmm.h:
 
-/usr/lib/x86_64-linux-gnu/glibmm-2.4/include/glibmmconfig.h:
+/usr/lib/i386-linux-gnu/glibmm-2.4/include/glibmmconfig.h:
 
 /usr/include/glibmm-2.4/glibmm/thread.h:
 
@@ -1134,7 +1134,7 @@ src/main.d: ../src/main.cpp ../src/Display.h \
 
 /usr/include/glib-2.0/glib/gtypes.h:
 
-/usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h:
+/usr/lib/i386-linux-gnu/glib-2.0/include/glibconfig.h:
 
 /usr/include/glib-2.0/glib/gmacros.h:
 
@@ -1296,7 +1296,7 @@ src/main.d: ../src/main.cpp ../src/Display.h \
 
 /usr/include/sigc++-2.0/sigc++/signal_base.h:
 
-/usr/lib/x86_64-linux-gnu/sigc++-2.0/include/sigc++config.h:
+/usr/lib/i386-linux-gnu/sigc++-2.0/include/sigc++config.h:
 
 /usr/include/sigc++-2.0/sigc++/type_traits.h:
 
@@ -1980,7 +1980,7 @@ src/main.d: ../src/main.cpp ../src/Display.h \
 
 /usr/lib/gdkmm-3.0/include/gdkmmconfig.h:
 
-/usr/lib/x86_64-linux-gnu/pangomm-1.4/include/pangommconfig.h:
+/usr/lib/i386-linux-gnu/pangomm-1.4/include/pangommconfig.h:
 
 /usr/include/gtk-3.0/gdk/gdk.h:
 

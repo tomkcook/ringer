@@ -2,7 +2,7 @@ src/Bell.d: ../src/Bell.cpp ../src/Bell.h \
  /usr/include/sigc++-2.0/sigc++/sigc++.h \
  /usr/include/sigc++-2.0/sigc++/signal.h \
  /usr/include/sigc++-2.0/sigc++/signal_base.h \
- /usr/lib/x86_64-linux-gnu/sigc++-2.0/include/sigc++config.h \
+ /usr/lib/i386-linux-gnu/sigc++-2.0/include/sigc++config.h \
  /usr/include/sigc++-2.0/sigc++/type_traits.h \
  /usr/include/sigc++-2.0/sigc++/trackable.h \
  /usr/include/sigc++-2.0/sigc++/functors/slot.h \
@@ -40,7 +40,7 @@ src/Bell.d: ../src/Bell.cpp ../src/Bell.h \
 
 /usr/include/sigc++-2.0/sigc++/signal_base.h:
 
-/usr/lib/x86_64-linux-gnu/sigc++-2.0/include/sigc++config.h:
+/usr/lib/i386-linux-gnu/sigc++-2.0/include/sigc++config.h:
 
 /usr/include/sigc++-2.0/sigc++/type_traits.h:
 

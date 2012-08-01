@@ -9,7 +9,8 @@
 #include <AL/al.h>
 #include <AL/alut.h>
 #include <Ogre.h>
-
+#include <sstream>
+#include <iostream>
 // Support rings of up to 22 bells
 unsigned semitoneOffsets[] = {
 		0,  2,  4,  5,  7,  9,  11,
@@ -19,7 +20,7 @@ unsigned semitoneOffsets[] = {
 };
 struct BellSounds::BellSoundsImpl
 {
-	ALuint buffer;
+	ALuint buffer[8];
 	std::vector<ALuint> sources;
 	unsigned m_BellCount;
 };
@@ -46,9 +47,15 @@ BellSounds::BellSounds(unsigned nBells, Ogre::Camera* camera) :
 	alListenerfv(AL_VELOCITY, listenerVelocity);
 	alListenerfv(AL_ORIENTATION, listenerOri);
 
-	pimpl->buffer = alutCreateBufferFromFile("bell.wav");
-	if(pimpl->buffer == AL_NONE)
-		throw alutGetError();
+	for(unsigned i = 1; i < 9; i++) {
+		std::stringstream ss;
+		ss << "data/bell-" << i << ".wav";
+		pimpl->buffer[i-1] = alutCreateBufferFromFile(ss.str().c_str());
+		if(pimpl->buffer[i-1] == AL_NONE) {
+			std::cout << "Error loading " << ss.str().c_str() << ": " << alutGetError() << std::endl;
+			throw alutGetError();
+		}
+	}
 
 	alGenSources(nBells, pimpl->sources.data());
 
@@ -58,11 +65,11 @@ BellSounds::BellSounds(unsigned nBells, Ogre::Camera* camera) :
 	for(unsigned ii = 0; ii < nBells; ii++)
 	{
 		// Scale the pitch to the correct note for the bell
-		alSourcef(pimpl->sources[ii], AL_PITCH, pow(2, semitoneOffsets[nBells - ii - 1]));
+		alSourcef(pimpl->sources[ii], AL_PITCH, 1.0f);
 		alSourcef(pimpl->sources[ii], AL_GAIN, 1.0f);
 		alSourcefv(pimpl->sources[ii], AL_POSITION, sourcePos);
 		alSourcefv(pimpl->sources[ii], AL_VELOCITY, sourceVel);
-		alSourcei(pimpl->sources[ii], AL_BUFFER, pimpl->buffer);
+		alSourcei(pimpl->sources[ii], AL_BUFFER, pimpl->buffer[ii]);
 		alSourcei(pimpl->sources[ii], AL_LOOPING, AL_FALSE);
 	}
 }
